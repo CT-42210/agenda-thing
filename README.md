@@ -1,5 +1,5 @@
 # agenda-thing
-maybe a to be google classroom replacement (my son hates it) with more functions. at the moment... its nothing but a terminal app. lets just wait and see.
+maybe a to be google classroom replacement with more functions. at the moment... its nothing but a terminal app. lets just wait and see.
 
 right now there isnt much to put here.
 there is going to be a diffrent python file for every "screen" or major function. you can look at the launcher.py file to really see what is involved at the moment. 
