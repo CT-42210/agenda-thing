@@ -19,6 +19,7 @@ def welcome():
     buffering()
     print("----------------------------------------------------")
     print("Welcome",first_name)
+    print("loaded v0.3")
     account_file.close()
     homescreen_order()
 
