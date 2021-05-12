@@ -357,6 +357,6 @@ def setup():
 
     setup_file = open("setup.txt","w")
     setup_file.write("setup completion = \n true")
-    setup_file.write("\n Version 0.2")
+    setup_file.write("\n Version 0.3")
     print("setup complete! please restart for the full aplication.")
     time.sleep(5)
