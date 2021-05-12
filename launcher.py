@@ -3,6 +3,9 @@ import time
 import os
 import setup
 import homescreen
+import assignments
+import checklists
+import settings
 
 t = time.localtime()
 current_time = time.strftime("%H:%M:%S", t)
@@ -21,8 +24,8 @@ def bypass():
 
 def install_checker():
     setup_file = open('setup.txt', 'r')
-    true_strings = ['setup completion =\n', ' true\n', ' Version 0.2']
-    false_strings = ['setup completion = false \n', '\n', ' Version 0.2']
+    true_strings = ['setup completion =\n', ' true\n', ' Version 0.3']
+    false_strings = ['setup completion = false \n', '\n', ' Version 0.3']
 
     lines = setup_file.readline()
 
@@ -39,6 +42,7 @@ def install_checker():
             if readline(lines) == True:
                 print('installed. launching...')
                 homescreen.welcome()
+                usr_input()
                 break
             elif readline(lines) == False:
                 print('not installed. installing...')
@@ -48,6 +52,34 @@ def install_checker():
                 pass
 
     setup_file.close()
+
+def usr_input():
+
+    def assignment_handler():
+        assignments.assignments()
+
+    def checklists_handler():
+        checklists.checklists()
+
+    def settings_handler():
+        settings.settings()
+
+    print("what do you want to do?")
+    question = input(" \n type [a] to open your assignments page, \n type [c] to open your checklist page, \n type [s] to edit your settings. \n \n $")
+
+    handlers = {
+        'a': assignment_handler,
+        'c': checklists_handler,
+        's': settings_handler
+    }
+
+    if question in handlers:
+        handlers[question]()
+    else:
+        print("Unknown choice", question)
+
+
+
 
 path = os.getcwd()
 name = "setup.txt"
