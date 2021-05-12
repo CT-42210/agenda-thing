@@ -8,7 +8,7 @@ current_time = time.strftime("%H:%M:%S", t)
 def instalation_check():
     setup_file = open("setup.txt", "w")
     setup_file.write("setup completion = false \n")
-    setup_file.write("\n Version 0.2")
+    setup_file.write("\n Version 0.3")
     setup_file.close()
 
 def log_creation():
